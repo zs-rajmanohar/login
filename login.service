@@ -10,4 +10,4 @@ ExecStart=/home/go/src/login/login
 Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target"
+WantedBy=multi-user.target
