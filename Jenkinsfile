@@ -5,6 +5,15 @@ pipeline {
 
   stages {
 
+    stage ('create directories') {
+      steps {
+        sh '''
+        mkdir -p ~/go/src && cd ~/go/src
+        '''
+      }
+
+    }
+
     stage('install some dependencies') {
       steps {
         sh '''
@@ -20,7 +29,7 @@ pipeline {
     stage('build the project') {
       steps {
         sh '''
-          sudo go build
+          go build
        '''
       }
     }
@@ -28,7 +37,7 @@ pipeline {
     stage('prepare artifacts') {
       steps {
         sh '''
-          sudo zip -r login.zip *
+          zip -r login.zip *
         '''
       }
     }
