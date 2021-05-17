@@ -5,16 +5,6 @@ pipeline {
 
   stages {
 
-    stage('adjusting path variables') {
-      steps {
-        sh '''
-          export PATH=$PATH:/usr/local/go/bin
-          export GOPATH=/go
-          source ~/.profile
-        '''
-      }
-    }
-
     stage('install some dependencies') {
       steps {
         sh '''
