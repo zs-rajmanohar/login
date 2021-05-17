@@ -8,8 +8,11 @@ pipeline {
     stage ('create directories') {
       steps {
         sh '''
-        mkdir -p ~/go/src && cd ~/go/src
-        export GOPATH=/go
+          mkdir -p ~/go/src && cd ~/go/src
+          wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+          export PATH=$PATH:/usr/local/go/bin
+          export GOPATH=/go
+          source ~/.profile
         '''
       }
 
