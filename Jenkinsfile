@@ -20,7 +20,6 @@ pipeline {
         sh '''
           sudo depmod
           sudo apt install go-dep
-          sudo go get
         '''
       }
     }
