@@ -8,9 +8,9 @@ pipeline {
     stage('adjusting path variables') {
       steps {
         sh '''
-          export PATH=$PATH:/usr/local/go/bin
-          export GOPATH=/go
-          source ~/.profile
+          sudo export PATH=$PATH:/usr/local/go/bin
+          sudo export GOPATH=/go
+          sudo source ~/.profile
         '''
       }
     }
@@ -18,10 +18,10 @@ pipeline {
     stage('install some dependencies') {
       steps {
         sh '''
-          depmod
-          apt install go-dep
-          dep ensure
-          go get
+          sudo depmod
+          sudo apt install go-dep
+          sudo dep ensure
+          sudo go get
         '''
       }
     }
@@ -31,7 +31,7 @@ pipeline {
     stage('build the project') {
       steps {
         sh '''
-          go build
+          sudo go build
        '''
       }
     }
@@ -39,7 +39,7 @@ pipeline {
     stage('prepare artifacts') {
       steps {
         sh '''
-          zip -r login.zip *
+          sudo zip -r login.zip *
         '''
       }
     }
