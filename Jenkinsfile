@@ -32,7 +32,7 @@ pipeline {
            sh '''
              go vet .
              golint .
-             cd test && go test -v
+
            '''
          }
        }
