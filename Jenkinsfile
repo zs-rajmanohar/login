@@ -6,9 +6,8 @@ pipeline {
     go 'go1.14.2'
   }
   environment {
-    GO1142MODULE = 'on'
-    CGO_ENABLED = 0
-    GOPATH = /go
+    export PATH=$PATH:/usr/local/go/bin
+    export GOPATH = /go
   }
 
   stages {
