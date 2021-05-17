@@ -10,8 +10,6 @@ pipeline {
         sh '''
           sudo depmod
           sudo apt install go-dep
-          cd login
-          sudo dep ensure
           sudo go get
         '''
       }
