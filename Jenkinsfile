@@ -2,38 +2,31 @@ pipeline {
   agent {
     label 'agent1'
   }
+  tools {
+    go 'go1.14.2'
+  }
+  environment {
+    GO1142MODULE = 'on'
+    CGO_ENABLED = 0
+    GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+  }
 
   stages {
-//
-//     stage ('create directories') {
-//       steps {
-//         sh '''
-//           mkdir -p ~/go/src && cd ~/go/src
-//           wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
-//           export PATH=$PATH:/usr/local/go/bin
-//           export GOPATH=/go
-//           source ~/.profile
-//         '''
-//       }
-
-//        }
-//
-//        stage('install some dependencies') {
-//          steps {
-//            sh '''
-//           sudo depmod
-//           sudo apt install go-dep
-//         '''
-//       }
-//     }
-
-
+    stage('installing dependencies') {
+      steps{
+        sh '''
+          go version
+          depmod
+          sudo apt install go-dep
+        '''
+      }
+    }
 
     stage('build the project') {
       steps {
         sh '''
-          cd ../../../login-ci/
-          sudo apt install go-dep
+          dep ensure
+          go get
           go build
        '''
       }
