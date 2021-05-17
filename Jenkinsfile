@@ -32,7 +32,6 @@ pipeline {
     stage('build the project') {
       steps {
         sh '''
-          cd ~/login
           go build
        '''
       }
