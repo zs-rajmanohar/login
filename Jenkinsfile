@@ -8,9 +8,9 @@ pipeline {
     stage('adjusting path variables') {
       steps {
         sh '''
-          sudo export PATH=$PATH:/usr/local/go/bin
-          sudo export GOPATH=/go
-          sudo source ~/.profile
+          export PATH=$PATH:/usr/local/go/bin
+          export GOPATH=/go
+          source ~/.profile
         '''
       }
     }
