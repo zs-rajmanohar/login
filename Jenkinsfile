@@ -4,20 +4,20 @@ pipeline {
   }
    tools {
           go 'go1.14.2'
-      }
+   }
    environment {
      GO1142MODULE = 'on'
      CGO_ENABLED = 0
      GOPATH =/go
    }
-
-   stage('Build') {
-     steps {
-       sh '''
-         go build
-       '''
+   stages {
+     stage('Build') {
+       steps {
+         sh '''
+           go build
+         '''
+       }
      }
-   }
 //        tools {
 //     go 'go1.14.2'
 //   }
@@ -47,13 +47,13 @@ pipeline {
 //       }
 //     }
 
-    stage('prepare artifacts') {
-      steps {
-        sh '''
-          zip -r login.zip *
-        '''
-      }
-    }
+     stage('prepare artifacts') {
+       steps {
+         sh '''
+           zip -r login.zip *
+         '''
+       }
+     }
 
 //     stage('upload artifacts') {
 //       steps {
@@ -62,5 +62,5 @@ pipeline {
 //         '''
 //       }
 //     }
-  }
+   }
 }
