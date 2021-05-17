@@ -10,36 +10,15 @@ pipeline {
      CGO_ENABLED = 0
      GOPATH =/go
    }
-   stages {
-     stage('Pre Test') {
-       steps {
-         sh '''
-           go version
-           go get -u golang.org/x/lint/golint
-         '''
-       }
-     }
-     stage('Build') {
-       steps {
-         sh '''
-           go build
-         '''
-       }
-     }
-     stage('Test') {
-       steps {
-         withEnv(["PATH+GO=${GOPATH}/bin"]){
-           sh '''
-             go vet .
-             golint .
 
-           '''
-         }
-       }
+   stage('Build') {
+     steps {
+       sh '''
+         go build
+       '''
      }
-
-
-//   tools {
+   }
+//        tools {
 //     go 'go1.14.2'
 //   }
 //   environment {
