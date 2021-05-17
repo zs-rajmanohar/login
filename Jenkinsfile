@@ -8,7 +8,6 @@ pipeline {
    environment {
      GO1142MODULE = 'on'
      CGO_ENABLED = 0
-     PATH=$PATH:/usr/local/go/bin
      GOPATH =/go
    }
    stages {
