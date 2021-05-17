@@ -32,6 +32,7 @@ pipeline {
     stage('build the project') {
       steps {
         sh '''
+          cd ../../../login-ci/
           sudo apt install go-dep
           go build
        '''
