@@ -8,7 +8,8 @@ pipeline {
       environment {
           GO1142MODULE = 'on'
           CGO_ENABLED = 0
-          GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
+          PATH=$PATH:/usr/local/go/bin
+          GOPATH =/go
       }
       stages {
           stage('Pre Test') {
