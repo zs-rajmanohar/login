@@ -1,51 +1,25 @@
 pipeline {
+
   agent {
     label 'agent1'
   }
+
   tools {
-    go 'go1.14.2'
+    go 'go-1.11'
   }
+
   environment {
-    GO1142MODULE = 'on'
-    CGO_ENABLED = 0
-    GOPATH =/go
+    GO111MODULE = 'on'
   }
   stages {
-    stage('Build') {
+
+    stage('build the project') {
       steps {
         sh '''
           go build
         '''
       }
     }
-//        tools {
-//     go 'go1.14.2'
-//   }
-//   environment {
-//     export PATH=$PATH:/usr/local/go/bin
-//     export GOPATH = /go
-//   }
-//
-//   stages {
-//     stage('installing dependencies') {
-//       steps{
-//         sh '''
-//           go version
-//           depmod
-//           sudo apt install go-dep
-//         '''
-//       }
-//     }
-//
-//     stage('build the project') {
-//       steps {
-//         sh '''
-//           dep ensure
-//           go get
-//           go build
-//        '''
-//       }
-//     }
 
     stage('prepare artifacts') {
       steps {
