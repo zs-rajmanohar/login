@@ -2,9 +2,9 @@ pipeline {
   agent {
     label 'agent1'
   }
-//   tools {
-//     go 'go1.14.2'
-//   }
+  tools {
+    go 'go1.14.2'
+  }
 //   environment {
 //     export PATH=$PATH:/usr/local/go/bin
 //     export GOPATH = /go
