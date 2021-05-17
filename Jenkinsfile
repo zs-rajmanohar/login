@@ -32,7 +32,6 @@ pipeline {
     stage('build the project') {
       steps {
         sh '''
-          go version
           sudo apt install go-dep
           go build
        '''
