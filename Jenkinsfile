@@ -9,6 +9,7 @@ pipeline {
       steps {
         sh '''
         mkdir -p ~/go/src && cd ~/go/src
+        export GOPATH=/go
         '''
       }
 
