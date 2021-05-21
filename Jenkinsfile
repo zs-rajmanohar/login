@@ -2,6 +2,6 @@
 
 todoapp (
   COMPONENT           : 'login',
-   APP_TYPE           :  'go'
+  APP_TYPE           :  'go'
   SKIP_NEXUS_UPLOAD   :  false
 )
