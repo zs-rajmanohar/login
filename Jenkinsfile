@@ -5,3 +5,4 @@ todoapp (
   APP_TYPE            : 'go',
   SKIP_NEXUS_UPLOAD   : false
 )
+
