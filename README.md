@@ -1,1 +1,1 @@
-new version - 3.2
+new version released - 3.2
