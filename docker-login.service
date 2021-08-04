@@ -1,0 +1,15 @@
+[Unit]
+Description = Login Service
+
+
+[Service]
+Type=simple
+Environment=AUTH_API_PORT=8080
+Environment=USERS_API_ADDRESS=http://users:80
+ExecStart=/go/src/login
+Restart=on-failure
+SyslogIdentifier=login
+
+[Install]
+WantedBy=multi-user.target
+
