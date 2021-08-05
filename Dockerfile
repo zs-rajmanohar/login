@@ -7,6 +7,7 @@ RUN         mkdir -p ~/go/src
 COPY        . /go/src/
 WORKDIR     /go/src/
 #RUN export GOPATH=~/go
-RUN         apt-get install go-dep -y
+# RUN         apt-get install go-dep -y
+RUN         go mod init
 RUN         go get && go build
 CMD         [ "login" ]
