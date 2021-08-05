@@ -1,6 +1,6 @@
 FROM        ubuntu
-RUN         apt-get update -y && apt-get install -y tzdata
-RUN         apt-get install golang -y
+# RUN         apt-get update -y && apt-get install -y tzdata
+# RUN         apt-get install golang -y
 #RUN export PATH=$PATH:/usr/local/go/bin
 RUN         mkdir -p ~/go/src
 COPY        . /go/src/
