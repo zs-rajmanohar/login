@@ -1,1 +1,1 @@
-new version released - 12.10
+new version released - 12.11
