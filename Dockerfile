@@ -6,6 +6,7 @@ FROM        golang:1.11
 RUN         mkdir -p /go/src
 COPY        . /go/src/
 WORKDIR     /go/src/
+ENV         GO111MODULE=off
 # COPY go.mod ./
 # COPY go.sum ./
 # RUN go mod download
