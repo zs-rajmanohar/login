@@ -1,4 +1,4 @@
-FROM        golang:1
+FROM        golang:1.16-alpine
 #FROM        ubuntu
 # RUN         apt-get update -y && apt-get install -y tzdata
 # RUN         apt-get install golang -y
@@ -6,8 +6,12 @@ FROM        golang:1
 RUN         mkdir -p /go/src
 COPY        . /go/src/
 WORKDIR     /go/src/
+COPY go.mod ./
+COPY go.sum ./
+RUN go mod download
 #RUN export GOPATH=~/go
 # RUN         apt-get install go-dep -y
-RUN         go mod init main.go
-RUN         go get && go build
+# RUN         go mod init main.go
+# RUN         go get && go build
+RUN         go build
 CMD         [ "login" ]
