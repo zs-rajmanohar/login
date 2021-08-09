@@ -1,1 +1,1 @@
-new version released - 12.16
+new version released - 12.17
