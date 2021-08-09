@@ -1,4 +1,4 @@
-FROM        golang:1.16-alpine
+FROM        golang
 #FROM        ubuntu
 # RUN         apt-get update -y && apt-get install -y tzdata
 # RUN         apt-get install golang -y
