@@ -10,4 +10,4 @@ WORKDIR     /go/src/
 # RUN         apt-get install go-dep -y
 RUN         go mod init main.go
 RUN         go get && go build
-CMD         [ "./login" ]
+CMD         [ "login" ]
