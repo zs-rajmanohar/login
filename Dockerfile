@@ -6,12 +6,13 @@ FROM        golang:1.16-alpine
 RUN         mkdir -p /go/src
 COPY        . /go/src/
 WORKDIR     /go/src/
-COPY go.mod ./
-COPY go.sum ./
-RUN go mod download
+# COPY go.mod ./
+# COPY go.sum ./
+# RUN go mod download
+RUN         go env -w GO111MODULE=off
 #RUN export GOPATH=~/go
 # RUN         apt-get install go-dep -y
 # RUN         go mod init main.go
-# RUN         go get && go build
-RUN         go build
+ RUN         go get && go build
+# RUN         go build
 CMD         [ "login" ]
