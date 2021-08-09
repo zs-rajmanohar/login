@@ -1,4 +1,4 @@
-FROM        golang
+FROM        golang:1.11
 #FROM        ubuntu
 # RUN         apt-get update -y && apt-get install -y tzdata
 # RUN         apt-get install golang -y
@@ -13,6 +13,6 @@ WORKDIR     /go/src/
 # RUN export GOPATH=~/go
 # RUN         apt-get install go-dep -y
 # RUN         go mod init main.go
-#  RUN         go get && go build
+RUN         go get && go build
 # RUN         go build
-# CMD         [ "login" ]
+CMD         [ "login" ]
