@@ -10,7 +10,7 @@ WORKDIR     /go/src/
 # COPY go.sum ./
 # RUN go mod download
 RUN         go env -w GO111MODULE=off
-#RUN export GOPATH=~/go
+RUN export GOPATH=~/go
 # RUN         apt-get install go-dep -y
 # RUN         go mod init main.go
  RUN         go get && go build
