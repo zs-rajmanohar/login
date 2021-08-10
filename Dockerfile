@@ -16,6 +16,6 @@ WORKDIR     /go/src/
 RUN         go mod init github.com/login
 RUN         go get && go build
 # RUN         go build
-ENV         AUTH_API_PORT=80
+ENV         AUTH_API_PORT=8080
 CMD         [ "login" ]
 
