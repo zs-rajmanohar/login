@@ -1,1 +1,1 @@
-new version released - 12.23
+new version released - 25.0
